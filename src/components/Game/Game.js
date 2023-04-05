@@ -1,5 +1,5 @@
 import React from "react";
-import { Guess } from "../Guess/Guess";
+import { GuessInput } from "../GuessInput/GuessInput";
 import { GuessResults } from "../GuessResults/GuessResults";
 import { sample } from "../../utils";
 import { WORDS } from "../../data";
@@ -17,7 +17,7 @@ function Game() {
   return (
     <>
       <GuessResults onGuesses={guesses} />
-      <Guess onHandleSubmitGuess={handleSubmitGuess} />
+      <GuessInput onHandleSubmitGuess={handleSubmitGuess} />
     </>
   );
 }

@@ -1,33 +1,13 @@
-import React from "react";
-export const Guess = ({ onHandleSubmitGuess }) => {
-  const [guess, setGuess] = React.useState("");
+import { range } from "../../utils";
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onHandleSubmitGuess(guess);
-    setGuess("");
-  };
-
-  const handleInput = (e) => {
-    const newWord = e.target.value;
-    const upperCaseWord = newWord.toUpperCase();
-    setGuess(upperCaseWord);
-  };
-
+export const Guess = ({ onValueGuess }) => {
   return (
-    <form onSubmit={(e) => handleSubmit(e)} className="guess-input-wrapper">
-      <label htmlFor="guess-input">Enter guess:</label>
-      <input
-        id="guess-input"
-        type="text"
-        value={guess}
-        onChange={(e) => handleInput(e)}
-        required
-        minLength={5}
-        maxLength={5}
-        pattern="[a-zA-Z]{5}"
-        title="5 letter word"
-      />
-    </form>
+    <p className="guess">
+      {range(5).map((num) => (
+        <span key={num} className="cell">
+          {onValueGuess ? onValueGuess[num] : undefined}
+        </span>
+      ))}
+    </p>
   );
 };
