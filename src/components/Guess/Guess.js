@@ -1,11 +1,11 @@
 import React from "react";
-export const InputWord = ({ onWordInput }) => {
+export const Guess = ({ onHandleSubmitGuess }) => {
   const [guess, setGuess] = React.useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    onHandleSubmitGuess(guess);
     setGuess("");
-    console.log({ guess });
   };
 
   const handleInput = (e) => {
