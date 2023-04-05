@@ -1,6 +1,6 @@
 import { Guess } from "../Guess/Guess";
 import { range } from "../../utils";
-import {NUM_OF_GUESSES_ALLOWED} from "../../constants"
+import { NUM_OF_GUESSES_ALLOWED } from "../../constants";
 export const GuessResults = ({ onGuesses }) => {
   return (
     <div className="guess-results">
